@@ -1,4 +1,4 @@
-persian calendar | تقویم فارسی
+persian calendar | تقویم فارسی وب
 
 html css js
 
