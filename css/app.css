@@ -9,32 +9,39 @@ body {
     text-align: center;
 }
 
-table {
+.mh__calender{
+    width: 100%;
+}
+.mh__calender table {
     width: 70%;
     margin: 50px auto;
     border-collapse: collapse;
 }
 
-th,
-td {
+.mh__calender th,
+.mh__calender td {
     padding: 15px;
     border: 1px solid #ddd;
 }
 
-th {
+.mh__calender th {
     background-color: #4caf50;
     color: white;
 }
 
-td {
+.mh__calender td {
     background-color: #f9f9f9;
 }
 
-.text-muted {
+.mh__calender .text-muted {
     visibility: hidden;
     border: 0;
 }
 
-.navigation-buttons {
+.mh__calender .navigation-buttons {
     margin-top: 20px;
+}
+
+.mh__calender .today{
+    color: red;
 }
