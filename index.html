@@ -1,41 +1,40 @@
 <!DOCTYPE html>
 <html lang="fa">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/app.css?v1" />
+        <title>تقویم فارسی</title>
+    </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./css/app.css">
-  <title>تقویم فارسی</title>
-</head>
+    <body dir="rtl">
+        <h2>تقویم فارسی</h2>
+        <h2 id="current-month"></h2>
 
-<body dir="rtl">
-  <h2>تقویم فارسی</h2>
-  <h2 id="current-month"></h2>
+        <div class="mh__calender">
+            <div class="navigation-buttons">
+                <button onclick="previousMonth()">ماه قبل</button>
+                <button onclick="nextMonth()">ماه بعد</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>شنبه</th>
+                        <th>یک‌شنبه</th>
+                        <th>دو‌شنبه</th>
+                        <th>سه‌شنبه</th>
+                        <th>چهار‌شنبه</th>
+                        <th>پنج‌شنبه</th>
+                        <th>جمعه</th>
+                    </tr>
+                </thead>
+                <tbody id="calendar-body"></tbody>
+            </table>
+        </div>
 
-  <div class="navigation-buttons">
-    <button onclick="previousMonth()">ماه قبل</button>
-    <button onclick="nextMonth()">ماه بعد</button>
-  </div>
-  <table>
-    <thead>
-      <tr>
-        <th>شنبه</th>
-        <th>یک‌شنبه</th>
-        <th>دو‌شنبه</th>
-        <th>سه‌شنبه</th>
-        <th>چهار‌شنبه</th>
-        <th>پنج‌شنبه</th>
-        <th>جمعه</th>
-      </tr>
-    </thead>
-    <tbody id="calendar-body"></tbody>
-  </table>
-
-  <script src="js/moment.min.js"></script>
-  <script src="js/fa.min.js"></script>
-  <script src="js/jalali-moment.browser.js"></script>
-  <script src="js/app.js"></script>
-
-</body>
-
+        <script src="js/moment.min.js"></script>
+        <script src="js/fa.min.js"></script>
+        <script src="js/jalali-moment.browser.js"></script>
+        <script src="js/app.js?v1"></script>
+    </body>
 </html>
