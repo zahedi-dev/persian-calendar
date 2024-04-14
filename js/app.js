@@ -28,7 +28,7 @@ function monthToNumber(month) {
     month = month.toString().replace("Esfand", "12");
     return month;
 }
-let data = ["2024-02-17", "250,000"];
+
 let currentMonth = moment();
 
 // تابع برای ساخت تقویم فارسی
@@ -57,13 +57,16 @@ function generateCalendar() {
     // خالی کردن محتوای جدول
     let calendarBody = document.getElementById("calendar-body");
     calendarBody.innerHTML = "";
-
     // افزودن روزها به جدول
     for (let i = 0; i < 42; i++) {
         const day = moment(startDate).add(i, "jDay");
-        const dayNumber = day.jDate();
+        const dayNumber = day.jDate();        
         const isCurrentMonth = day.isSame(firstDayOfMonth, "jMonth");
         const isPastDay = day.isBefore(moment().subtract(1, "jDay"), "jDate"); // افزودن کلاس past-day به روزهای گذشته
+        let isToday =
+            day.isBefore(moment().subtract(0, "jDay"), "jDate") &&
+            dayNumber == moment().format("jDD") && !isPastDay;
+
         const dayClass = isCurrentMonth
             ? isPastDay
                 ? "past-day"
@@ -74,7 +77,9 @@ function generateCalendar() {
         let td = document.createElement("td");
         let div = document.createElement("div");
         div.className = "dayGhaymat__parent";
-        div.innerHTML = `<span class='${dayClass} day'>${dayNumber}</span>`;
+        div.innerHTML = `<span class='${dayClass} day ${
+            isToday ? "today" : ""
+        }'>${dayNumber}</span>`;
 
         td.appendChild(div);
         calendarBody.appendChild(td);
