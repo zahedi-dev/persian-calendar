@@ -30,7 +30,6 @@ function monthToNumber(month) {
 }
 
 let currentMonth = moment();
-
 // تابع برای ساخت تقویم فارسی
 function generateCalendar() {
     // شروع از اولین روز ماه
