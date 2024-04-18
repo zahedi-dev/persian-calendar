@@ -9,39 +9,190 @@ body {
     text-align: center;
 }
 
-.mh__calender{
+.show-taghvim {
+    cursor: pointer;
+}
+
+.parent__taghvim {
+	direction: rtl;
     width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, .2);
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+    opacity:1;
+    visibility: visible;
+    transition: all .3s;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    z-index: 5;
 }
-.mh__calender table {
-    width: 70%;
-    margin: 50px auto;
+
+.parent__taghvim-show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.taghvim {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+	position: absolute;
+	transition: all .5s;
+    bottom: 50%;
+    transform: translateY(50%);
+	background: #fff;
+	border-radius: 30px;
+	overflow: hidden;
+}
+
+.taghvim__control {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    background-color: #fff;
+    justify-content: space-between;
+    border-radius: 20px 20px 0 0;
+    padding-top: 10px;
+    align-items: center;
+}
+
+.taghvim__control button {
+    border: none;
+    margin: 0 10px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.taghvim__control button svg {
+    width: 25px;
+    height: 25px;
+    color: #000075;
+    stroke-width: 2px;
+}
+
+
+.parent__taghvim table {
+    margin: 10px auto;
     border-collapse: collapse;
+    width: 100%;
+    min-height: 500px;
+    max-height: 500px;
+    /* border-radius: 0 0 20px 20px; */
+    overflow: hidden;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
-.mh__calender th,
-.mh__calender td {
-    padding: 15px;
+.parent__taghvim th,
+.parent__taghvim td {
+    font-size: 12px;
     border: 1px solid #ddd;
+    border: 0;
+    padding: 15px 5px;
 }
 
-.mh__calender th {
-    background-color: #4caf50;
-    color: white;
+.parent__taghvim th {
+    background-color: #fff;
+    color: #333;
+    font-weight: bold;
+	text-align: center;
 }
 
-.mh__calender td {
-    background-color: #f9f9f9;
+.parent__taghvim td {
+    background-color: #fff;
 }
 
-.mh__calender .text-muted {
+.text-muted {
     visibility: hidden;
     border: 0;
 }
 
-.mh__calender .navigation-buttons {
-    margin-top: 20px;
+.past-day {
+    color: #33333391;
+    position: relative;
+    opacity: .7;
 }
 
-.mh__calender .today{
+.past-day::after {
+    content: "";
+    width: 50%;
+    height: 1px;
+    background-color: #3333335d;
+    position: absolute;
+    transform: rotate(-40deg);
+}
+
+.dayGhaymat__parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ghaymat-taghvim {
+    font-size: 11px;
+    color: #000075;
+}
+.f-8px{
+	font-size: 8px !important;
+}
+
+.day {
+    font-size: 15px;
+    color: rgb(51, 51, 51);
+}
+
+#current-month {
+    font-size: 15px;
+}
+
+.close-taghvim {
+    background: #fff;
+    width: 30px;
+    border: 0;
+    height: 30px;
+    position: absolute;
+    bottom: 14px;
+    cursor: pointer;
+}
+
+.close-taghvim svg {
+    width: 100%;
+    height: 100%;
+    color: #333;
+    stroke-width: 2px;
+}
+
+.showDateprice{
+	display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+	align-items: center;
+}
+.showDateprice .rooms__showDate-discount{
+	width: auto;
+}
+.today{
     color: red;
+}
+
+
+@media only screen and (min-width:900px) {
+    parent__taghvim {
+        align-items: center !important;
+    }
+
+    .taghvim {
+        width: 45%;
+    }
 }
