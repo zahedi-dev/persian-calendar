@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="fa">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./css/app.css?v1" />
-        <title>تقویم فارسی</title>
-    </head>
 
-    <body dir="rtl">
-        <h2>تقویم فارسی</h2>
-        <h2 id="current-month"></h2>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/app.css?v2" />
+    <title>تقویم فارسی</title>
+</head>
 
-        <div class="mh__calender">
-            <div class="navigation-buttons">
-                <button onclick="previousMonth()">ماه قبل</button>
-                <button onclick="nextMonth()">ماه بعد</button>
+<body dir="rtl">
+    <div class="parent__taghvim" data-id="1">
+        <div class="taghvim">
+            <div class="taghvim__control">
+                <button onclick="previousMonth(this)">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>
+                </button>
+                <h2 id="current-month"></h2>
+                <button onclick="nextMonth(this)">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                    </svg>
+                </button>
             </div>
             <table>
                 <thead>
@@ -29,12 +39,14 @@
                     </tr>
                 </thead>
                 <tbody id="calendar-body"></tbody>
-            </table>
+            </table>            
         </div>
+    </div>
 
-        <script src="js/moment.min.js"></script>
-        <script src="js/fa.min.js"></script>
-        <script src="js/jalali-moment.browser.js"></script>
-        <script src="js/app.js?v1"></script>
-    </body>
+    <script src="js/moment.min.js"></script>
+    <script src="js/fa.min.js"></script>
+    <script src="js/jalali-moment.browser.js"></script>
+    <script src="js/app.js?v1"></script>
+</body>
+
 </html>
