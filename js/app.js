@@ -28,10 +28,10 @@ function monthToNumber(month) {
     month = month.toString().replace("Esfand", "12");
     return month;
 }
-
 let currentMonth = moment();
+
 // تابع برای ساخت تقویم فارسی
-function generateCalendar() {
+function generateCalendar(id) {
     // شروع از اولین روز ماه
     const firstDayOfMonth = moment(currentMonth).startOf("jMonth");
 
@@ -59,13 +59,12 @@ function generateCalendar() {
     // افزودن روزها به جدول
     for (let i = 0; i < 42; i++) {
         const day = moment(startDate).add(i, "jDay");
-        const dayNumber = day.jDate();        
+        const dayNumber = day.jDate();
         const isCurrentMonth = day.isSame(firstDayOfMonth, "jMonth");
         const isPastDay = day.isBefore(moment().subtract(1, "jDay"), "jDate"); // افزودن کلاس past-day به روزهای گذشته
         let isToday =
             day.isBefore(moment().subtract(0, "jDay"), "jDate") &&
             dayNumber == moment().format("jDD") && !isPastDay;
-
         const dayClass = isCurrentMonth
             ? isPastDay
                 ? "past-day"
@@ -75,10 +74,8 @@ function generateCalendar() {
         // اضافه کردن روز به جدول
         let td = document.createElement("td");
         let div = document.createElement("div");
-        div.className = "dayGhaymat__parent";
-        div.innerHTML = `<span class='${dayClass} day ${
-            isToday ? "today" : ""
-        }'>${dayNumber}</span>`;
+        div.className = `dayGhaymat__parent ${dayClass}`;
+        div.innerHTML = `<span class='day ${ isToday ? "today" : "" }'>${dayNumber}</span>`;
 
         td.appendChild(div);
         calendarBody.appendChild(td);
@@ -99,16 +96,19 @@ function generateCalendar() {
 }
 
 // تابع برای نمایش ماه قبل
-function previousMonth() {
+function previousMonth(e) {
+    let id =
+        e.parentElement.parentElement.parentElement.getAttribute("data-id");
     currentMonth.subtract(1, "jMonth");
-    generateCalendar();
+    generateCalendar(id);
 }
 
 // تابع برای نمایش ماه بعد
-function nextMonth() {
+function nextMonth(e) {
+    let id =
+        e.parentElement.parentElement.parentElement.getAttribute("data-id");
     currentMonth.add(1, "jMonth");
-    generateCalendar();
+    generateCalendar(id);
 }
 
-// اجرای تابع برای نمایش تقویم
-generateCalendar();
+generateCalendar(1);
