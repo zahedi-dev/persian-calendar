@@ -89,10 +89,7 @@ function generateCalendar(id) {
 
     // نمایش اسم ماه
     // $("#current-month").text(currentMonth.format("jMMMM jYYYY"));
-    document.getElementById("current-month").innerText =
-        toPersianMonth(currentMonth.format("jMMMM")) +
-        " " +
-        currentMonth.format("jYYYY");
+    document.getElementById("current-month").innerText = toPersianMonth(currentMonth.format("jMMMM")) + " " + currentMonth.format("jYYYY");
 }
 
 // تابع برای نمایش ماه قبل
